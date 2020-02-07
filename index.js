@@ -16,14 +16,15 @@ if (counter === 10 ) {
 if (counter === 0) {
     document.querySelector('.container').innerHTML = '<p class="backgroundtext">find the spot</p>'
 }
-    randomX = Math.floor(Math.random() * (screen.width - 500));
-    randomY = Math.floor(169 + Math.random() * (screen.height - 500 )) ;
+    randomX = Math.floor(Math.random() * (screen.width - 100));
+    randomY = Math.floor(169 + Math.random() * (screen.height - 300)) ;
     console.log('position ' + randomX, randomY);
    
 }
 
 
-var dots = []
+var dots = [];
+var colors = ['red', 'blue', 'orange', 'purple', 'green', 'yellow', 'pink']
 
 let screenLog = document.querySelector('.container');
 screenLog.addEventListener('mousemove', function(e) {
@@ -42,7 +43,7 @@ console.log(e.screenX, e.screenY)
         dots.push(dot)
         console.log(dots)
         background = '<p class="backgroundtext">find the spot</p>';
-        document.querySelector('.container').innerHTML = background + dots;
+        document.querySelector('.container').innerHTML = background + dots.join(' ');
         
         starter();
     } 
